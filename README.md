@@ -20,3 +20,9 @@ Known issues:
 - Can't get exactly number of pages, if you tring to calculate it as (total_count/60) and tring to iterate through pages than you getting "Server returned HTTP response code: 403 for URL" in some page because of request rate limit of Github API, even with auth token.
 ![alt text](https://i.paste.pics/10ae092500d804cb0920699bc14a6e27.png "API rate limit")
 - Rate limit, github API has requests limit per hour
+
+Run example:
+Main window:
+![alt text](https://i.paste.pics/fa8151daa7777a5fc6d88877c6a70563.png "API test index")
+Searching results:
+![alt text](https://i.paste.pics/7a9887ee82646300f0fb78ee3e06eda1.png "API test searching results")
