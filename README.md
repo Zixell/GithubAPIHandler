@@ -21,7 +21,8 @@ Known issues:
 ![alt text](https://i.paste.pics/10ae092500d804cb0920699bc14a6e27.png "API rate limit")
 - Rate limit, github API has requests limit per hour
 
-Run example:
+## Run example:
+
 Main window:
 ![alt text](https://i.paste.pics/fa8151daa7777a5fc6d88877c6a70563.png "API test index")
 Searching results:
