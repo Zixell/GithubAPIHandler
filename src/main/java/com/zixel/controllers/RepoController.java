@@ -32,49 +32,53 @@ public class RepoController {
 
 
     ObjectMapper objectMapper = new ObjectMapper();
-    Repository repositoryInfoPhp = new Repository(1, new ArrayList<>());
-    Repository repositoryInfoJavaScript = new Repository(1, new ArrayList<>());
-    try {
-      repositoryInfoPhp = objectMapper.readValue(new URL("https://api.github.com/search/repositories?q=language:php"), Repository.class);
-      repositoryInfoJavaScript = objectMapper.readValue(new URL("https://api.github.com/search/repositories?q=language:JavaScript"), Repository.class);
 
+    ArrayList<Repository> repositoryArrayList = new ArrayList<>();
+
+    //Repository repositoryInfoPhp = new Repository(1, new ArrayList<>());
+    //Repository repositoryInfoJavaScript = new Repository(1, new ArrayList<>());
+    try {
+      repositoryArrayList.add(objectMapper.readValue(new URL("https://api.github.com/search/repositories?q="+name+"+language%3Ajavascript"), Repository.class));
+      repositoryArrayList.add(objectMapper.readValue(new URL("https://api.github.com/search/repositories?q="+name+"+language%3Aphp"), Repository.class));
     } catch (Exception e){
       e.printStackTrace();
     }
 
     ArrayList<ArrayList<String>> list = new ArrayList<>();
 
-    for(Item i: repositoryInfoPhp.getItems()){
-      ArrayList<String> temp = new ArrayList<>();
-      String nameItem = i.getName();
-      String fullNameItem = i.getFullName();
-      String login = i.getOwner().getLogin();
+    for(Repository r: repositoryArrayList){
+      for(Item i: r.getItems()){
+        ArrayList<String> temp = new ArrayList<>();
+        String nameItem = i.getName();
+        String fullNameItem = i.getFullName();
+        String login = i.getOwner().getLogin();
 
-      temp.add(nameItem);
-      temp.add(fullNameItem);
-      temp.add(login);
+        temp.add(nameItem);
+        temp.add(fullNameItem);
+        temp.add(login);
 
-      if(nameItem.toLowerCase().contains(name.toLowerCase())){
         list.add(temp);
-      }
 
+
+      }
     }
 
-    for(Item i: repositoryInfoJavaScript.getItems()){
-      ArrayList<String> temp = new ArrayList<>();
-      String nameItem = i.getName();
-      String fullNameItem = i.getFullName();
-      String login = i.getOwner().getLogin();
 
-      temp.add(nameItem);
-      temp.add(fullNameItem);
-      temp.add(login);
-
-      if(nameItem.toLowerCase().contains(name.toLowerCase())){
-        list.add(temp);
-      }
-
-    }
+//    for(Item i: repositoryInfoJavaScript.getItems()){
+//      ArrayList<String> temp = new ArrayList<>();
+//      String nameItem = i.getName();
+//      String fullNameItem = i.getFullName();
+//      String login = i.getOwner().getLogin();
+//
+//      temp.add(nameItem);
+//      temp.add(fullNameItem);
+//      temp.add(login);
+//
+//      if(nameItem.toLowerCase().contains(name.toLowerCase())){
+//        list.add(temp);
+//      }
+//
+//    }
     model.addAttribute("list", list);
 
     return "repositories";
