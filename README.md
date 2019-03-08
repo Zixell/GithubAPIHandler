@@ -6,11 +6,11 @@ Used technologies:
   - Spring MVC, Spring boot
   - Jackson
 
-To run import project:
-- First of all clone or download repository
-- If you downloaded project as zip then extract if to any directory
+To run you need to import project:
+- First of all clone repository or download it as zip
+- If you downloaded project as zip then extract it to any directory
 - Go to your IDE
 - If you use Intellij Idea go File/Open.. then find directory with the project, click "pom.xml" and then click "Ok"
-- Proffit!
+- Profit!
 
 Pretty sure another IDEs have similar interface to do that.
