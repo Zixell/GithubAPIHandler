@@ -17,5 +17,5 @@ Pretty sure another IDEs have similar interface to do that.
 
 Known issues:
 - Paging, github API returns response repositories with 60 count for page
-- Can't get exactly number of pages, if you tring to calculate it as (total_count/60) and tring to iterate through pages than you getting "Server returned HTTP response code: 403 for URL" because of request rate limit of Github API, even with auth token.
+- Can't get exactly number of pages, if you tring to calculate it as (total_count/60) and tring to iterate through pages than you getting "Server returned HTTP response code: 403 for URL" in some page because of request rate limit of Github API, even with auth token.
 - Rate limit, github API has requests limit per hour
