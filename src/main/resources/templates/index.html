@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Getting Started: Serving Web Content</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<style>
+  #boxshadow {
+    position: relative;
+    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    padding: 20px;
+    margin: 5%;
+    background: white;
+  }
+
+  /* Make the image fit the box */
+  #boxshadow img {
+    width: 100%;
+    border: 1px solid #8a4419;
+    border-style: inset;
+  }
+
+</style>
+<body>
+
+<div id="boxshadow">
+  <div class="w3-container w3-teal">
+    <h2>Get repositories list of PHP and JavaScript:</h2>
+  </div>
+
+  <form action="/getrepos" method="get" class="w3-container" style="">
+    <label class="w3-text-teal"><b>Repository name</b></label>
+    <input name="name" class="w3-input w3-border w3-light-grey" type="text">
+    <input type="submit" value="Search" class="w3-button w3-light-grey" style="margin-top: 5px">
+  </form>
+
+</div>
+
+
+</body>
+</html>
